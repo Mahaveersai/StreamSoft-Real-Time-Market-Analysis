@@ -7,7 +7,7 @@ sudo docker pull metabase/metabase:latest
 sudo docker run -d -p 80:3000 --name metabase metabase/metabase
 sleep 1m
 
-# Wait until Metabase is up
+# Wait until Metabase is up ls
 while true; do
     echo "Checking if Metabase is up..."
     response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:80/api/health)
