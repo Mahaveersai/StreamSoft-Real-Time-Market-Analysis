@@ -21,7 +21,7 @@ while true; do
     fi
 done
 
-# Create admin user and configure Athena database
+#  admin user and configure Athena database
 current_response=$(curl -s -m 5 -X GET \
                     -H "Content-Type: application/json" \
                     http://localhost:80/api/session/properties

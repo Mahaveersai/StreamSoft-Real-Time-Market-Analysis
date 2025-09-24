@@ -15,3 +15,4 @@ def get_average_size(data: list) -> float:
         / len(data)
         / 1024
     )
+#test
