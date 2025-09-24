@@ -1,4 +1,4 @@
-# metabase Resource
+# Metabase Resource
 
 Welcome to the metabase Resource! This README provides an overview of the features, structure, and related information.
 

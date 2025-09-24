@@ -1,4 +1,6 @@
 #!/bin/bash
+# Install Docker and run Metabase
+# Then configure Metabase to connect to Athena
 sudo yum install docker -y
 sudo service docker start
 sudo docker pull metabase/metabase:latest
@@ -19,6 +21,7 @@ while true; do
     fi
 done
 
+# Create admin user and configure Athena database
 current_response=$(curl -s -m 5 -X GET \
                     -H "Content-Type: application/json" \
                     http://localhost:80/api/session/properties
@@ -43,7 +46,7 @@ create_admin_response=$(curl -s -X POST \
         "site_name": "My Metabase Instance"
     }
   }')
-
+  
 SESSION_TOKEN=$(echo "$create_admin_response" | jq -r '.id')
 export SESSION_TOKEN
 
